@@ -1,0 +1,17 @@
+<h2>All people:</h2>
+<ul class="heroes">
+  <li *ngFor="let person of people">
+    <button type="button" (click)="onSelect(person)">
+        <span class="badge">{{person.id}}</span>
+      <span class="name">{{person.name}}</span>
+    </button>
+  </li>
+</ul>
+<div *ngIf="selectedPerson">
+    <h2><b>{{selectedPerson.name}}</b> Details</h2>
+    <div>id: {{selectedPerson.id}}</div>
+    <div>
+      <label for="person-name">Person name: </label>
+      <input id="person-name" [(ngModel)]="selectedPerson.name" placeholder="name">
+    </div>
+  </div>
